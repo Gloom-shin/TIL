@@ -48,7 +48,7 @@ html, body{
     - 영역3과 영역5 : `area35`  -> `flex-grow : 1`
     - 영역4 : `area4`          -> `flex-grow : 6` 
   
-  <img src="5">
+  <img src="/images/cssTranning5.png">
   
   - 실습 완료!! 
   > writtten date 2022-04-28
