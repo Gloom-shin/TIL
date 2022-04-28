@@ -59,3 +59,5 @@
   - 대표적으로 id, class가 있다. 
   - 그외에 자세한 내용은 잘 정리된 셀렉터 링크를 참고 하자! [CSS Selectors](https://www.w3schools.com/cssref/css_selectors.asp)
  
+writtten date 2022-04-27
+
