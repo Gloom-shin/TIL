@@ -14,9 +14,16 @@
 - `git add 파일명`으로 원하는 파일을 추가할 수 있다.
    - `git add .` 혹은 `git add -a`으로 모든 파일을 한번에 추가 할 수 있다. 
 ### reset 
-- `git reset [--옵션] 파일명`
+- `git reset [--옵션] HEAD^ 숫자`
 - 주로 사용하는 옵션은 `--mixed`, `--hard`, `--soft`로 3가지가 있고, 기본값은 `--mixed`이다.
-- 
+   1. `git reset --hard`
+      - 해당 commit ID의 상태로 작업한폴더와 Index영역 모두 초기화하는 옵션이다. 
+      - 변경 이력및 내용 전부 삭제된다.
+   2. git reset --mixed
+      - 
+   3. git reset --soft
+      
+    
 - git add 로 파일이 Staging Area에 들어가있는 경우, `git reset HEAD 파일명` 을 통해 git add 를 취소할 수 있다.
    - 위 명령어를 수행하면, Staging Area에서 unstaged로 옮겼을 뿐, 수정된 사항은 바뀌지않는다. 
    - HEAD외에 main, origin/HEAD , origin/main 이 있다.
