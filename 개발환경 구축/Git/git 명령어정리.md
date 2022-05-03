@@ -44,6 +44,18 @@
 <img src ="./images/reset_option.png">
 
 ### push 
- -
+ - `git push remote이름 branch이름`
+ - 예를 들어 `git push origin master`이라하면, 원격머신 주소인 origin이라는 원격저장소의 branch가 master에 전달된다.
 
 ### pull
+- `git pull remote이름 branch이름`
+- 또한 다른 사람이 원격 저장소(Remote repository)에 업데이트한 파일이 있을 때
+- 원격저장소와 내 로컬저장소의 상태를 동일하게 만들기 위해 pull을 이용한다.
+- 가져오는 저장소 소스가 최신버전일 경우 `merge`명령어가 적용되어, 내 소스에 적용된다.
+     -  그렇기 때문에 **충돌**이 일어날 수 있다.
+
+
+### fetch
+- `git fetch remote이름`  브런치명 언급이 없으며
+- `pull`과 다르게 소스만 가져온다.
+- 그래서 fetch 명령어를 실행하고 해당 브랜치로 checkout를 해줘야된다.
