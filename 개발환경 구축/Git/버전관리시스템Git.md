@@ -58,8 +58,14 @@
 ##  Git 명령어 정리  
  - clone 
  - status 
- - add
- - restore : 아직 commit 되지않은 Local Repository의 변경 사항을 폐기할 수 있다. 
+ - restore : 아직 add 되지않은 Local Repository의 변경 사항을 폐기할 수 있다.(add 된 파일은 폐기되질않는다.) 
    - `git restore 파일경로/파일명`
-
-
+ - add : 내 로컬의 untracked file을 Git의 관리하인 Staging Area로 추가해 준다.
+   - `git add 파일명`으로 원하는 파일을 추가할 수 있다.
+   - `git add .` 혹은 `git add -a`으로 모든 파일을 한번에 추가 할 수 있다. 
+ - reset : git add 로 파일이 Staging Area에 들어가있는 경우, `git reset HEAD 파일명` 을 통해 git add 를 취소할 수 있다.
+   - 위 명령어를 수행하면, Staging Area에서 unstaged로 옮겼을 뿐, 수정된 사항은 바뀌지않는다. 
+   - HEAD외에 main, origin/HEAD , origin/main 이 있다.
+ - commit : 
+ - 
+ 
