@@ -53,5 +53,13 @@
  - 만약 1번에 아무것도 입력하지 않았으면, 기본값인 `id_rsa` 파일과 `id_rsa.pub`파일이 생성되었을 것이다. 
    1. id_rsa : private key를 담고 있는 파일로 굳이 건들지 않아도 된다. 
 
+---
+
+##  Git 명령어 정리  
+ - clone 
+ - status 
+ - add
+ - restore : 아직 commit 되지않은 Local Repository의 변경 사항을 폐기할 수 있다. 
+   - `git restore 파일경로/파일명`
 
 
