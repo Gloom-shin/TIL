@@ -28,3 +28,20 @@
   str = str + "Test";
   System.out.println(str.hashcode());   //795822158
   ```
+ - 주소값 자체가 바뀌는 것을 보아, String은 새로운 값으로 덮어씌우기가 됨을 알 수 있다.
+
+> 이말은, 문자열 변경이 자주일어나는 프로그램에서 String을 사용한다면 비효율적일수도 있다는 것!!
+
+# StringBuiler 와 StringBuffer
+ - 위 문제를 해결하기위해서 가변성(mutable)이 있는 이 2가지 클래스를 사용한다.
+
+## AbstractStringBuilder 
+- 이름에도 알 수 있듯이 추상 클래스이다. 
+- StringBuilder와 StringBuffer 둘다 AbstractStringBuilder 라는 추상 클래스를 상속받아 구현된 클래스이다. 
+- 이 추상클래스 내부에는 멤버변수 2가지가 존재한다.
+### 맴버변수
+ 1. value : 문자열의 값을 저장하는 byte형 배열
+ 2. count : 현재 문자열 크기의 값을 가지는 int형 변수 
+
+
+
