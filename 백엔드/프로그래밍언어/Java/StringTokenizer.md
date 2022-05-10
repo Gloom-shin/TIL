@@ -35,6 +35,7 @@ System.out.println("total tokens:"+tokenizer.countTokens());
 > total tokens:0  
  - delim(구분자)를 별도로 지정해주지 않고, returnDelims도 지정해주지 않았기에, 기본값인 공백으로 구분했으며, 공백은 포함하지 않았다. 
 
+<br></br>
 
 ### 테스트 2 
 - 이번엔 구분자를 `, =` 로 두고 해보자
@@ -56,6 +57,8 @@ System.out.println("total tokens:"+tokenizer.countTokens());
 
 - 신기하게 `,=`두개다 각각 분리되어 적용되며, 문자열이 쪼개진걸 볼 수 있다.
 
+<br></br>
+
 ### 테스트 3 
 - 그럼 마지막으로 ` returnDelims= true` 로 해보자
 ```
@@ -68,20 +71,19 @@ while(tokenizer.hasMoreTokens()){
 System.out.println("total tokens:"+tokenizer.countTokens());
 ```
 
-### 출력값
-> show me the
-> ,   
->  money  
-> ,  
-> =  
-> something for  
-> =  
-> nothing  
-> total tokens:0
+### 출력값 
+
+>  show me the   
+>  `,`   
+>  money   
+>  `,`   
+>  `=`  
+>  something for   
+>  `=`   
+>  nothing    
+>  total tokens:0   
 
 - 구분자를 포함하면, 구분자 별도로 token값으로 나눠짐을 알 수 있다.
 
 
 
-
-.
