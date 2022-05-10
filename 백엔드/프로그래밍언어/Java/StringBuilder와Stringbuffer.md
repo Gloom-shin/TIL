@@ -30,13 +30,13 @@
   ```
  - 주소값 자체가 바뀌는 것을 보아, String은 새로운 값으로 덮어씌우기가 됨을 알 수 있다.
 
-> 이말은, 문자열 변경이 자주일어나는 프로그램에서 String을 사용한다면 비효율적일수도 있다는 것!!
+> 이말은, 문자열 변경이 자주일어나는 프로그램에서 String을 사용한다면 비효율적일수도 있다는 것!!⭐⭐⭐
 
 
 ---
 <br></br>
 
-# StringBuilder 와 StringBuffer
+# StringBuilder 와 StringBuffer👀
  - 위 문제를 해결하기위해서 가변성(mutable)이 있는 이 2가지 클래스를 사용한다.
 
 ## AbstractStringBuilder 
