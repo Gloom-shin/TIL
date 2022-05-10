@@ -56,9 +56,9 @@
             return appendNull();
         }
         int len = str.length();
-        ensureCapacityInternal(count + len);
-        putStringAt(count, str);
-        count += len;
+        ensureCapacityInternal(count + len);  //추가되는 문자열 길이만큼 늘리고
+        putStringAt(count, str); // 값 추가
+        count += len; // 문자열 길이 갱신
         return this;
     }
 ```
