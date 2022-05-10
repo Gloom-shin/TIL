@@ -39,9 +39,40 @@
 - 이름에도 알 수 있듯이 추상 클래스이다. 
 - StringBuilder와 StringBuffer 둘다 AbstractStringBuilder 라는 추상 클래스를 상속받아 구현된 클래스이다. 
 - 이 추상클래스 내부에는 멤버변수 2가지가 존재한다.
+
+
 ### 맴버변수
  1. value : 문자열의 값을 저장하는 byte형 배열
  2. count : 현재 문자열 크기의 값을 가지는 int형 변수 
+ 
+### append() 메소드 
+```
+    public AbstractStringBuilder append(String str) {
+        if (str == null) {
+            return appendNull();
+        }
+        int len = str.length();
+        ensureCapacityInternal(count + len);
+        putStringAt(count, str);
+        count += len;
+        return this;
+    }
+```
+- 내부동작을 보면 값이 변경되더라도 **같은 주소공간을 참조**하게 되는 것이며, **값이 변경되는 가변성**을 띄게 된다.   
 
 
+## 차이점 ⭐
+- 가장 큰 한가지 차이점이 존재하는데, 바로 동기화(Synchronization) 이다.
+- StringBuffer는 동기화를 지원하지만, StringBuilder는 동기화를 지원하지 않는다.
 
+### 동기화란?
+ - 여러개의 스레드가 한 개의 자원에 접근하려고 할때, 현재 데이터를 사용하고 있는 스레드가 있을 경우, 그 스레드를 제외하고 나머지 스레드들이 접근할 수 없도록 막는 것을 말한다. 
+ - 물론 현재 데이터를 사용하는 스레드가 사용을 마치면, 다음 스레드가 접근할 수 있다. 
+
+
+### 정리 ✔
+ - String : 문자열 연산이 적고 멀티스레드 환경일 경우
+ - StringBuffer : 문자열 연산이 많고 멀티스레드 환경일 경우
+ - StringBuilder : 문자열 연산이 많고 단일스레드 이거나 동기화를 고려하지않아도 되는 경우
+ 
+ 
