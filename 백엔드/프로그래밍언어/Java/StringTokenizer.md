@@ -86,12 +86,13 @@ System.out.println("total tokens:"+tokenizer.countTokens());
 - 구분자를 포함하면, 구분자 별도로 token값으로 나눠짐을 알 수 있다.
 
 ## Split()메소드와의 차이 
-- 위 테스트3번의 결과값에서 알 수 있듯이 StringTokenizer와 Split()의 차이는
-- 구분자를 문자열로 작성 하였을때, StringTokenizer은 문자 하나하나를 구분자로 보지만 
-- Split()의 경우 문자열을 하나의 구분자로 본다.
-      - 물론 Split()함수도 정규식을 사용하면, 여러 구분자를 사용할 수 있긴하다.
+- 위 테스트3번의 결과값에서 알 수 있듯이 StringTokenizer와 Split()의 차이  
+    - 구분자를 문자열로 작성 하였을때, StringTokenizer은 문자 하나하나를 구분자로 보지만   
+    - Split()의 경우 문자열을 하나의 구분자로 본다.  
+        - ex) Split(",=")이면  "show me the, money"과 "something for=nothing "으로만 나눠진다.  
+        - 물론 Split()함수도 정규식을 사용하면, 여러 구분자를 사용할 수 있긴하다.  
 - 또한, String 값안에 구분자가 연속으로 들어가 구분자와 구분자 사이 아무것도 없는 경우 
-      - StringTokenizer은 빈공간은 무시한다.
-      - Split()의 경우 빈공간도 빈공간으로 구분한다.
+    - StringTokenizer은 빈공간은 무시한다.
+    - Split()의 경우 빈공간도 빈공간으로 구분한다.
 
 > 결론 : 상황에 따라 필요한 곳에 맞춰 쓰면 좋을 것 같다. 
