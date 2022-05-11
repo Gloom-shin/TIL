@@ -95,3 +95,4 @@ OOP는 말그대로 객체지향 프로그래밍(OOP, Object Oriented Programmin
 - **다형성** :  하나의 행위가 결과를 여러 개 만들어낸다.(오버로딩, 오버라이딩)
  
 
+참고링크 : [해시넷 객체지향](http://wiki.hash.kr/index.php/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5#cite_note-.EC.97.AD.EC.82.AC_.EB.82.98.EB.AC.B4-6)
