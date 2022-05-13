@@ -120,7 +120,7 @@ class Cat extends Mammalia{
  - 그럼 원래 고양이(Cat)클래스안에 있던 데이터들은 어떻게 되었을까❓
 
 ### 변환 테스트3 
-#### 문제 발생한 곳
+# 문제 발생한 곳
 
 <p align= center><img src ="./images/ReferenceConversion4.png" width= 50%></p>
 
