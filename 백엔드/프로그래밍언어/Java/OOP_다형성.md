@@ -53,6 +53,8 @@ public class polymorphism {
 ### 참조변수의 변환 예시 
  - `mammalia`는 `Dog`보다 상위 클래스이기에, `mammalia`로 참조변수가 가능하다.
  - 거기에 한번더 `animal`도 ``mammalia`보다 상위 클래스이기에, 아무런 변환 없이 참조가 가능하다. 
+ 
+<p align= center><img src ="./images/ReferenceConversion1.png" width= 50%></p>
 
 ```
 public class polymorphism {
@@ -92,6 +94,9 @@ class Cat extends Mammalia{
 <br></br>
 
 ### 변환 테스트
+
+<p align= center><img src ="./images/ReferenceConversion2.png" width= 50%></p>
+
 ```
         Dog dog =new Dog();
         Cat cat = new Cat();
@@ -101,6 +106,8 @@ class Cat extends Mammalia{
 
 
 ### 변환 테스트2
+
+<p align= center><img src ="./images/ReferenceConversion3.png" width= 50%></p>
 
 ```
         Mammalia mammaliaDog = new Dog();
