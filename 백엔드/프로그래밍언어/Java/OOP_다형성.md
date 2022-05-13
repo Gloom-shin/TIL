@@ -160,7 +160,7 @@ class Cat extends Mammalia{
 ### 에러내용확인
 `class practice.Dog cannot be cast to class practice.Cat (practice.Dog and practice.Cat are in unnamed module of loader 'app'`
 - 대충 요약하자면 Dog를 Cat에 캐스팅할 수 없다.(서로 이름없는 모듈을 불렀습니다.)
-- 즉, `mammaliaDog`가 `new Dog()`로 생성되면서, 생성된 내용이 'Cat'클래스 안에 없기 때문이라는 것이다.
+- 즉, `mammaliaDog`가 `new Dog()`로 생성되면서, 생성된 내용이 `Cat`클래스 안에 없기 때문이라는 것이다.
 
 ### 해결책
  - `new`로 새로 만들어주면 해결가능하긴하다. 
