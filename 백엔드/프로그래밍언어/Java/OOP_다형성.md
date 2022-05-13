@@ -134,6 +134,9 @@ class Cat extends Mammalia{
 `class practice.Dog cannot be cast to class practice.Cat (practice.Dog and practice.Cat are in unnamed module of loader 'app'`
 - 대충 요약하자면 Dog를 Cat에 캐스팅할 수 없다.(서로 이름없는 모듈을 불렀습니다.)
 
+
+<br></br>
+
 ### 상위 클래스로 참조한 변수 확인
 
 <img src ="./images/polymorphism2.png">
