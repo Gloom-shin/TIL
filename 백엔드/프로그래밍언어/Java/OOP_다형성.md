@@ -106,6 +106,8 @@ class Cat extends Mammalia{
 ```
  - `ClassCastException`에러와 함께 당연히 **전환할 수 없는 타입**이라는 에러가 나온다.
 
+<br></br>
+
 
 ### 변환 테스트2
 
@@ -118,6 +120,8 @@ class Cat extends Mammalia{
 ```
  - 예상했던데로 오류가 나지않고 잘 변환된다. 
  - 그럼 원래 고양이(Cat)클래스안에 있던 데이터들은 어떻게 되었을까❓
+
+<br></br>
 
 ### 변환 테스트3 
 # 문제 발생한 곳
@@ -136,10 +140,39 @@ class Cat extends Mammalia{
 `class practice.Dog cannot be cast to class practice.Cat (practice.Dog and practice.Cat are in unnamed module of loader 'app'`
 - 대충 요약하자면 Dog를 Cat에 캐스팅할 수 없다.(서로 이름없는 모듈을 불렀습니다.)
 
+### 해결책
+ - `new`로 새로 만들어주면 해결가능하긴하다. 
+     - 물론 `new`로 생성해주는 것이기에, 클래스 Cat안에 cat(Mammalia m)생성자를 추가로 만들어줘야한다. 
+
+- Cat Class
+```
+class Cat extends Mammalia{
+    int size;
+    int name;
+    public Cat(){}        // 추가코드
+    public Cat(Mammalia mammaliaDog) {}  //추가코드
+    public void haveBaby(){
+        System.out.println("고양이새끼를 낳습니다.");
+    }
+    public void bark(){
+        System.out.println("냐옹!!");
+    }
+    public void attack(){
+        System.out.println("앞발를 들어 휘두릅니다.");
+    }
+}
+```
+- Main 메소드
+```
+        Mammalia mammaliaDog = new Dog();
+        Cat cat = new Cat(mammaliaDog);   // 오류없이 해결
+```
+### 하지만 아쉽게도..
+ - 다운캐스팅으로 해결하고 싶은데.. 그 방법은 아직 찾지못했다..
 
 <br></br>
 
-### 상위 클래스로 참조한 변수 확인
+## 상위 클래스로 참조한 변수 확인
 
 <img src ="./images/polymorphism2.png">
 
