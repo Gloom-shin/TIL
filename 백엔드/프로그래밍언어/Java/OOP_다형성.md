@@ -102,7 +102,7 @@ class Cat extends Mammalia{
         Cat cat = new Cat();
         cat = (Cat)dog;  // Inconvertible types 에러
 ```
- - 당연히 **전환할 수 없는 타입**이라는 에러가 나온다.
+ - `ClassCastException`에러와 함께 당연히 **전환할 수 없는 타입**이라는 에러가 나온다.
 
 
 ### 변환 테스트2
@@ -116,6 +116,23 @@ class Cat extends Mammalia{
 ```
  - 예상했던데로 오류가 나지않고 잘 변환된다. 
  - 그럼 원래 고양이(Cat)클래스안에 있던 데이터들은 어떻게 되었을까❓
+
+### 변환 테스트3
+
+
+<p align= center><img src ="./images/ReferenceConversion4.png" width= 50%></p>
+
+```
+        Mammalia mammaliaDog = new Dog();
+        Cat cat = (Cat)mammaliaDog; 
+        // 컴파일시 오류가 발생한다. 
+```
+- 위와 같은 경우는 `ClassCastException`이 일어난다. 
+- 이론상 완벽한데, 왜 에러가 나타나는 걸까요❓❓ 
+
+### 에러내용확인
+`class practice.Dog cannot be cast to class practice.Cat (practice.Dog and practice.Cat are in unnamed module of loader 'app'`
+- 대충 요약하자면 Dog를 Cat에 캐스팅할 수 없다.(서로 이름없는 모듈을 불렀습니다.)
 
 ### 상위 클래스로 참조한 변수 확인
 
