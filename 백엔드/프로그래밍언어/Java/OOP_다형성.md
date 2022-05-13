@@ -119,7 +119,7 @@ class Cat extends Mammalia{
         mammaliaCat = mammaliaDog; // 오류가 나질 않는다
 ```
  - 예상했던데로 오류가 나지않고 잘 변환된다. 
-
+ - 그럼 원래 고양이(Cat)클래스안에 있던 데이터들은 어떻게 되었을까❓
 <br></br>
 
 ## 상위 클래스로 참조한 변수 확인
@@ -129,12 +129,18 @@ class Cat extends Mammalia{
 ```
         Mammalia mammaliaDog = new Dog();
         mammaliaDog.haveBaby();  // "강아지새끼를 낳습니다." 출력
+        mammaliaDog.bark(); // 존재하지않음
+        mammaliaDog.tail(); // 존재하지않음
+        
+        Mammalia mammaliaCat = new Cat();
+        mammaliaCat = mammaliaDog;
+        mammaliaCat.haveBaby(); // "강아지새끼를 낳습니다." 출력
 ```
 - 원래 `Mammalia` 클래스에 있는 메소드는 실행가능하다.
 - `Mammalia` 에도 `haveBaby()`가 있지만, `Dog()`로 선언하였기에, `Dag.haveBaby()`로 불러 진다.
+- `mammaliaCat`과 `mammaliaDog`는 같은 타입(`Mammalia`)이기에 덮어씌우기가 가능하여 위와같은 역할이 나온다.
 
 
- - 그럼 원래 고양이(Cat)클래스안에 있던 데이터들은 어떻게 되었을까❓
 
 <br></br>
 
