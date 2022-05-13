@@ -7,7 +7,7 @@
 -  상위 클래스 타입의 참조변수를 통해서 하위 클래스의 객체를 참조할 수 있도록 허용한 것
 -  유의사항으로는 참조변수가 사용할 수 있는 멤버의 개수는 실제 객체의 맴버 개수보다 같거나 적어야 한다는 점!!
 
-<img src ="polymorphism.png">
+<p align= center><img src ="./images/polymorphism.png" width= 30%></p>
 
 ```
 class Animal{
@@ -24,6 +24,9 @@ class mammalia extends Animal{
 class dog extends mammalia{
     int size;
     int name;
+    public void haveBaby(){
+        System.out.println("강아지새끼를 낳습니다.");
+    }
     public void bark(){
         System.out.println("멍멍!");
     }
@@ -58,9 +61,9 @@ public class polymorphism {
         Animal animal = mammalia;   //   Mammalia -> Animal
     }
 }
-
 ```
 
+<br></br>
 
 - 그럼 강아지(Dog)클래스 말고 고양이(Cat)클래스를 만들어보자
 
@@ -70,6 +73,9 @@ public class polymorphism {
 class Cat extends Mammalia{
     int size;
     int name;
+    public void haveBaby(){
+        System.out.println("고양이새끼를 낳습니다.");
+    }
     public void bark(){
         System.out.println("냐옹!!");
     }
@@ -103,3 +109,16 @@ class Cat extends Mammalia{
 ```
  - 예상했던데로 오류가 나지않고 잘 변환된다. 
  - 그럼 원래 고양이(Cat)클래스안에 있던 데이터들은 어떻게 되었을까❓
+
+### 상위 클래스로 참조한 변수 확인
+
+<img src ="./images/polymorphism2.png">
+
+```
+        Mammalia mammaliaDog = new Dog();
+        mammaliaDog.haveBaby();  // "강아지새끼를 낳습니다." 출력
+```
+- 원래 `Mammalia` 클래스에 있는 메소드는 실행가능하다.
+- `Mammalia` 에도 `haveBaby()`가 있지만, `Dog()`로 선언하였기에, `Dag.haveBaby()`로 불러 진다.
+
+
