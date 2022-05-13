@@ -172,7 +172,7 @@ class Cat extends Mammalia{
     int size;
     int name;
     public Cat(){}        // 추가코드
-    public Cat(Mammalia mammaliaDog) {}  //추가코드
+    public Cat(Mammalia mammaliaDog) { this(); }  //추가코드
     public void haveBaby(){
         System.out.println("고양이새끼를 낳습니다.");
     }
