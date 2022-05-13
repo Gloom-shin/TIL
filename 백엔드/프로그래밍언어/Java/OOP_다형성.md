@@ -117,7 +117,7 @@ class Cat extends Mammalia{
  - 예상했던데로 오류가 나지않고 잘 변환된다. 
  - 그럼 원래 고양이(Cat)클래스안에 있던 데이터들은 어떻게 되었을까❓
 
-### 변환 테스트3
+### 변환 테스트3(막힘주의)
 
 
 <p align= center><img src ="./images/ReferenceConversion4.png" width= 50%></p>
