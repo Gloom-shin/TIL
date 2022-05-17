@@ -62,6 +62,8 @@ public class Main {
 
 
 ### Generic 종류 
+ - Generic에서 T,E,K,V 는 이름만 다르지 근본적인 기능을 동일하다. 
+ - 네이밍 관습으로, 가독성을 높히기위해 분류 하였다고 한다.
 
 |Type argument|Detail|
 |:--:|--|
