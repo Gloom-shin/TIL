@@ -70,8 +70,8 @@ public class Main {
 |`<T>`|Type|
 |`<E>`|Element|
 |`<K>`|Key|
-|`<V>`|Number|
-|`<N>`|Value|
+|`<V>`|Value|
+|`<N>`|Number|
 |`<R>`|Result|
 
 
@@ -94,3 +94,5 @@ public interface List<E> extends Collection<E>{
 - 대체 뭐하는 녀석인지 모르겠다...
 - 좀더 알아보니, 와일드 카드는 제한 기능을 활용하여 보다 논리적인 오류까지 잡아낼수 있는 힘이 생긴다고 한다.  
 - 그럼 제한하는 방법에 대해 알아보자
+
+
