@@ -26,10 +26,26 @@ public static void main(String[] args) {
 
 
 ## wildcard의 하한 제한
+
 ```
 public static void peekBox(Box<? super Number> box) { 
     System.out.println(box); 
 }
-
-
 ```
+### 코드 해석 
+ - 위 코드도 제네릭 타입이 `?` 즉, 와일드 카드만 있으면 어떠한 타입이 와도 상관은 없다. 
+ - 하지만 뒤에  `super Number`으로 제한을 걸었다.
+    - 이 덕에 타입이 Number이거나 Number가 상속하는 클래스만 들어가야한다. 
+```
+public static void main(String[] args) {
+    peekBox(new Box<Integer>());   //타입 오류
+    peekBox(new Box<Object>()); // 정상 작동
+}
+```
+ - 이것이 하한제한이다. Number클래스 보다 하위 클래스들은 올 수 없기 때문이다.
+ - 게다가 이 기능은 일반 제네릭에는 없는 기능으로 wildCard로 인해 보다 논리적으로 타입을 제한해줄 수 있다.
+
+<img src="">
+
+
+## 어디에 사용될까?
