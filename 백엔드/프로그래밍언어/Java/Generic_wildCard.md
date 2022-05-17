@@ -45,7 +45,8 @@ public static void main(String[] args) {
  - 이것이 하한제한이다. Number클래스 보다 하위 클래스들은 올 수 없기 때문이다.
  - 게다가 이 기능은 일반 제네릭에는 없는 기능으로 wildCard로 인해 보다 논리적으로 타입을 제한해줄 수 있다.
 
-<img src="">
+<img src="./images/genericWildCard.png">
 
+<br></br>
 
 ## 어디에 사용될까?
