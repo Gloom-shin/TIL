@@ -57,14 +57,35 @@
     - 참고 링크 (Map인터페이스는 부모 인터페이스가 있나요?)[https://stackoverflow.com/questions/40970695/which-is-the-parent-class-of-java-util-map-interface]
  
  **11. Map.Entry<K,V>**  
+  - 키와값 쌍을 한번에 저장합니다.
+  - 예를 들어
+     - Map<K,V>의 경우 K값과 V값을 같이 출력하려면, keySet()를 통해 K값을 추출하고, 다시 get(key)로 V를 찾아 같이 출력해야된다.
+     - Map.Entry<K,V>의 경우 K값과 V값을 같이 출력하려면, K값은 getKey()으로 V값은 getValue()로 출력하면 된다.
+ 
  **12. NavigableMap<K,V>**  
+  - 정렬된 Map<>으로 TreeMap 구현체로 생성하는 편이다.
+  - SortedMap<>인터페이스를 상속 받는다.
+ 
  **13. NavigableSet<E>**  
+  - 정렬된 Set<>으로 TreeSet 구현체로 생성하는 편이다.
+  - SortedSet<>인터페이스를 상속 받는다.
+
  **14. Observer**  
  **15. Queue<E>** ⭐  
+  - 먼저 저장된 값이 먼저 추출되는 인터페이스이다. 
+  - 보통 LinkedList<> 구현체로 생성하는 편이다. 
+ 
  **16. RandomAccess**	  
  **17. Set<E>** ⭐  
+  - 중복 요소를 포함하지 않는 컬렉션이다. 
+ 
  **18. SortedMap<K,V>**  
+  - K값의 전체 순서를 추가로 제공하는 Map<>인터페이스이다.
+ 
  **19. SortedSet<E>**	  
+  -  요소의 전체 순서를 추가로 제공하는 Set<>인터페이스이다.
+ 
+ 
 
   
   
