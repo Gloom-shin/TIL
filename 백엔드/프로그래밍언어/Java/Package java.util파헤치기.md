@@ -92,16 +92,30 @@
  - 인터페이스가 구현하지 못한 부분을 Class를 통해 구현하여, 구현체라고도 한다.
   
 #### 1. AbstractCollection<E>
+ - 이 클래스는 컬렉션 인터페이스를 구현하는데 필요한 최소한의 골격을 구현한다.
+ - 컬렉션 구현체의 가장 근본이되는 클래스라고 볼 수 있다. 
+ 
 #### 2. AbstractList<E>
+ - `random access 데이터 store`에 의해 지원되는 인터페이스를 구현하는데 필요한 최소한의 List인터페이스를 구현한다.
+ - 모든 List 구현체의 상위 클래스가 된다.
 #### 3. AbstractMap<K,V>
+ - Map 인터페이스를 구현하기위해 최소한의 골격을 제공하는 클래스
 #### 4. AbstractMap.SimpleEntry<K,V>
+ - Key값과 Value값을 유지하기위한 클래스
+ - 이 클래스 덕에 Value값을 변경할 수 있다.
 #### 5. AbstractMap.SimpleImmutableEntry<K,V>
+ - 변경할 수 없는 Key값과 Value값을 유지하는 클래스
+ - setValue()를 지원하지않아, 값을 바꿀 수가 없다.
 #### 6. AbstractQueue<E>
+ - Queue 작동을 하기위해 최소한의 골격을 제공하는 클래스
 #### 7. AbstractSequentialList<E>
+ - `sequential accessList 데이터 store`로 이루어진 List인터페이스를 구현하기 위해 최소한의 골격을 제공하는 클래스
 #### 8. AbstractSet<E>
+ - Set 인터페이스를 구현하기위해 최소한의 골격을 제공하는 클래스
 #### 9. ArrayDeque<E>
 #### 10. ArrayList<E>
 #### 11. Arrays
+ - 정렬 및 검색과 같은 배열을 조작하는 다양한 방법이 포함되어 있는 클래스
 #### 12. BitSet
 #### 13. Calendar
 #### 14. Collections
