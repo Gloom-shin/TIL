@@ -18,8 +18,9 @@
 
 ## util 패키지 구성 
 - 먼저 크게 패키지 구성은 5가지로 `interface` ,`class`, `Enum` , `Exception`, `Error`로 분류된다. 
+- 각 설명은 사전 오름차순으로 배열된다.
 
-### interface (오름차순 정렬)
+### interface 
   **1. Collection<E>** ⭐ 
   - collection 계급 인터페이스이다.
   
@@ -40,7 +41,7 @@
  
 **7. Iterator<E>** ⭐  
   - 단방향 순환 인터페이스이며, 컬렉션에 저장된 요소들을 읽어오는 방법을 표준화하여 쓰인다.
-  - remove()메소드가 존재하여, 공간 낭비를 최소화 할 수 있다. 
+  - `remove()`메소드가 존재하여, 공간 낭비를 최소화 할 수 있다. 
   - JDK1.2 이후로 추가된 컬렉션프레임워크
   
  **8. List<E>**	⭐  
@@ -48,47 +49,86 @@
   - 기본적으로 인덱스를 가지고 있는 객체 배열이다.
  
  **9. ListIterator<E>**	  
-  - 양쪽 방향으로 이동할 수 있는 iterator이다. 
-  - iterator 하위클래스 이다. 
+  - 양쪽 방향으로 이동할 수 있는 `iterator`이다. 
+  - `iterator` 하위클래스 이다. 
  **10. Map<K,V>** ⭐  
-  - Key값과 Value값이 매핑되어 있는 객체이다.
-  - Collection<E>에 포함되지 않는다는 걸 유의해야한다.
+  - `Key`값과 `Value`값이 매핑되어 있는 객체이다.
+  - `Collection<E>`에 포함되지 않는다는 걸 유의해야한다.
   - 게다가 `Map`인테페이스는 부모인터페이스가 없다.
     - 참고 링크 (Map인터페이스는 부모 인터페이스가 있나요?)[https://stackoverflow.com/questions/40970695/which-is-the-parent-class-of-java-util-map-interface]
  
  **11. Map.Entry<K,V>**  
   - 키와값 쌍을 한번에 저장합니다.
   - 예를 들어
-     - Map<K,V>의 경우 K값과 V값을 같이 출력하려면, keySet()를 통해 K값을 추출하고, 다시 get(key)로 V를 찾아 같이 출력해야된다.
-     - Map.Entry<K,V>의 경우 K값과 V값을 같이 출력하려면, K값은 getKey()으로 V값은 getValue()로 출력하면 된다.
+     - `Map<K,V>`의 경우 `K`값과 `V`값을 같이 출력하려면, `keySet()`를 통해 `K`값을 추출하고, 다시 `get(key)`로 `V`를 찾아 같이 출력해야된다.
+     - `Map.Entry<K,V>`의 경우 `K`값과 `V`값을 같이 출력하려면, `K`값은 `getKey()`으로 `V`값은 `getValue()`로 출력하면 된다.
  
  **12. NavigableMap<K,V>**  
-  - 정렬된 Map<>으로 TreeMap 구현체로 생성하는 편이다.
-  - SortedMap<>인터페이스를 상속 받는다.
+  - 정렬된 `Map<K,V>`으로 `TreeMap<K,V>`구현체로 생성하는 편이다.
+  - `SortedMap<K,V>`인터페이스를 상속 받는다.
  
  **13. NavigableSet<E>**  
-  - 정렬된 Set<>으로 TreeSet 구현체로 생성하는 편이다.
-  - SortedSet<>인터페이스를 상속 받는다.
+  - 정렬된 `Set<E>`으로 TreeSet 구현체로 생성하는 편이다.
+  - `SortedSet<E>`인터페이스를 상속 받는다.
 
  **14. Observer**  
  **15. Queue<E>** ⭐  
   - 먼저 저장된 값이 먼저 추출되는 인터페이스이다. 
-  - 보통 LinkedList<> 구현체로 생성하는 편이다. 
+  - 보통 `LinkedList<E>` 구현체로 생성하는 편이다. 
  
  **16. RandomAccess**	  
  **17. Set<E>** ⭐  
   - 중복 요소를 포함하지 않는 컬렉션이다. 
  
  **18. SortedMap<K,V>**  
-  - K값의 전체 순서를 추가로 제공하는 Map<>인터페이스이다.
+  - `K`값의 전체 순서를 추가로 제공하는 `Map<K,V>`인터페이스이다.
  
  **19. SortedSet<E>**	  
-  -  요소의 전체 순서를 추가로 제공하는 Set<>인터페이스이다.
+  -  요소의 전체 순서를 추가로 제공하는 `Set<E>`인터페이스이다.
  
- 
+---
+ ### Class
+ - 워낙내용이 많아 생략된 부분도 있으니 참고 바란다.
+ - 인터페이스가 구현하지 못한 부분을 Class를 통해 구현하여, 구현체라고도 한다.
+  
+#### 1. AbstractCollection<E>
+#### 2. AbstractList<E>
+#### 3. AbstractMap<K,V>
+#### 4. AbstractMap.SimpleEntry<K,V>
+#### 5. AbstractMap.SimpleImmutableEntry<K,V>
+#### 6. AbstractQueue<E>
+#### 7. AbstractSequentialList<E>
+#### 8. AbstractSet<E>
+#### 9. ArrayDeque<E>
+#### 10. ArrayList<E>
+#### 11. Arrays
+#### 12. BitSet
+#### 13. Calendar
+#### 14. Collections
+#### 15. Currency
+#### 16. Date
+#### 17. Dictionary<K,V>
+#### 18. EnumMap<K extends Enum<K>,V>
+#### 19. EnumSet<E extends Enum<E>>
+#### 20. HashMap<K,V>
+#### 21. HashSet<E>
+#### 22.Hashtable<K,V>
+#### 23. LinkedHashMap<K,V>
+#### 24. LinkedHashSet<E>
+#### 25. LinkedList<E>
+#### 26. PriorityQueue<E>
+#### 27. Random
+#### 28. Scanner
+#### 29. Stack<E>
+#### 30. StringTokenizer
+#### 31. TreeMap<K,V>
+#### 32. TreeSet<E> 
+#### 33. Vector<E>
+
 
   
-  
+ ### 그 외 `Enum` , `Exception`, `Error` 생략
+
   
   
   
