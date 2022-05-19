@@ -137,8 +137,11 @@ Math :: max; // 메서드 레퍼런스
 - 훨씬 간단하게 처리할 수 있다.
 - 이 메소드를 추상메소드안에 넣어 줄 수 있다.
 ```
-MyFunctionalInterface operato = Math :: max; //메서드 레퍼런스
+IntBinaryOperator operato = Math :: max; //메서드 레퍼런스
 ```
+ - `IntBinaryOperator`는 실제 있는 인터페이스이다. (`java.util.function;`)   
+<img src="./images/IntBinaryOperator.png">
+
 <br></br>
 
 ## 매서드 레퍼런스 사용법
@@ -147,5 +150,89 @@ MyFunctionalInterface operato = Math :: max; //메서드 레퍼런스
 
 ### 정적메소드 참조
 > 클래스 :: 메서드
+
 ### 인스턴스 메서드 참조
 > 참조 변수 :: 메서드
+
+### 실제 사용 예제
+
+/[Calculator.java/] 
+```
+public class Calculator {
+  public static int staticMethod(int x, int y) { //정적 메소드
+    return x + y;  
+  } 
+
+  public int instanceMethod(int x, int y) { // 인스턴스 메소드
+    return x * y;
+  }
+}
+```
+/[Main함수/] 
+```
+public static void main(String[] args) throws Exception {
+        IntBinaryOperator operator;
+
+        //정적 메서드
+        operator = Calculator::staticMethod;
+        System.out.println(operator.applyAsInt(3,4));   // 7
+
+        //인스턴스 메서드
+        Calculator calculator =new Calculator();
+        operator = calculator::instanceMethod;
+        System.out.println(operator.applyAsInt(3,4));   // 12
+}
+```
+
+### 생성자 참조
+> 클래스 :: new
+
+### 실제 사용 예제
+
+/[Main함수/] 
+```
+public class Member {
+  private String name;
+  private String id;
+
+  public Member() {
+    System.out.println("Member() 실행");
+  }
+
+  public Member(String id) {
+    System.out.println("Member(String id) 실행");
+    this.id = id;
+  }
+
+  public Member(String name, String id) {
+    System.out.println("Member(String name, String id) 실행");
+    this.id = id;
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getId() {
+    return id;
+  }
+}
+```
+- 만약 `Member`클래스로 생성자를 만들었을 때, 매개변수가 0개 1개 2개 일때 경우마다, `print`를 다르게 구현해놨다. 
+- 그리고 함수형인터페이스인 `Funtion<T, R>`과 `BiFunction<T, U, R>`을 사용하여 함수형인터페이스의 메소드를 바로 구현해 줄 수 있다.
+<img src ="./images/functionClass.png">
+> 하나의 인자를 받아들이는 함수로 나타내고, 결과를 생산합니다.
+> 파라미터 t 는 받아 들이는 하나의 함수 인자이다.   
+> 리턴값은 함수의 결과이다.  
+
+/[Main함수/] 
+```
+public static void main(String[] args) {
+    Function<String, Member> function1 = Member::new;
+    Member member1 = function1.apply("kimcoding");  //Member(String id) 실행
+
+    BiFunction<String, String, Member> function2 = Member::new;
+    Member member2 = function2.apply("kimcoding", "김코딩"); // Member(String name, String id) 실행
+}
+```
