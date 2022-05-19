@@ -18,7 +18,7 @@
 |--|--|
 |@Override|컴파일러에게 메서드를 오버라이딩하는 것이라고 알림|
 |@Deprecated|앞으로 사용하지 않을 대상을 알릴 때 사용|
-|@FunctionalInterface	|함수형 인터페이스라는 것을 알|
+|@FunctionalInterface	|함수형 인터페이스라는 것을 알 수 있음|
 |@SuppressWarning|컴파일러가 경고메세지를 나타내지 않음|
 
 - 메타 Annotation : `Annotation`에 붙이는 `Annotation`으로, `Annotation`을 정의할 때 쓰임
@@ -39,3 +39,21 @@
 ### @Deprecated
 <img src="./images/deprecated.png">
 - @Deprecated 가 명시된 변수 혹은 메소드를 사용하면, 취소선이 쳐지고, 경고 문구가 나온다.
+
+### @FunctionalInterface
+\[Runnable.java\]
+```
+@FunctionalInterface
+public interface Runnable {
+	public abstract void run ();
+    public abstract void win ();
+}
+```
+<img src="">
+ - 함수형 인터페이스를 선언할 때, 확인하기위해 사용된다. 
+ - 물론 애너테이션을 붙이지않아도 선언할 수 있지만, 실수를 방지 하지위한 확인용이다. 
+ - 함수형 인터페이스는 하나의 추상메소드만 있어야 한다.
+    - 만약 2개이상인 경우 에러를 발생시킨다.
+ 
+ ### @SuppressWarnings
+- 선언한 곳의 컴파일 경고를 나타내ㅏ지 않도록 한다.
