@@ -11,8 +11,9 @@
 ## Enum 클래스
 
 ### 사용법
-- class 대신에 enum으로 만들어 주고, enum명을 입력한 뒤, 배열처럼 상수를 나열해 주면 된다.
-- level.java _(파일명은 java로 나옴에 유의하자)_
+- class 대신에 enum으로 만들어 주고, enum명을 입력한 뒤, 배열처럼 상수를 나열해 주면 된다.   
+
+**\[level.java\]** _(파일명은 java로 나옴에 유의하자)_
 ```
 enum Level {
   LOW,
@@ -20,8 +21,9 @@ enum Level {
   HIGH
 }
 ```
-- 그리고 class가 있는 곳에서 enum을 할당하여 사용한다. _(new연산을 하지않음에 유의!)_
-- Main.java
+- 그리고 class가 있는 곳에서 enum을 할당하여 사용한다. _(new연산을 하지않음에 유의!)_  
+
+#### \[Main.java\]
 ```
 public class Main {
   public static void main(String[] args) {
@@ -58,6 +60,8 @@ public class Main {
 - 하지만, 이러한 순번값 외에 상숫값을 원하는 값으로 별도로 명시해줄 수 있다. 
 ### 상수값 추가
  - enum(열거)객체 뒤에 `()`하고 안에 상숫값을 넣어주면, 원하는 값을 지정해서 넣을 수 있다.
+
+**\[level.java\]**
 ```
 public enum Level {
     HIGH(5), MEDIUM(1), LOW(-10);
@@ -71,7 +75,9 @@ public enum Level {
 ```
  - 게다가, 위와 같이 enum객체들을 `;`로 구분지어 enum 클래스 안에 **변수와 메소드도 사용**할 수 있다.
 
-- Main.class
+
+
+#### \[Main.java\]
 ```
 public static void main(String[] args) {
     Level levelH = Level.HIGH;
