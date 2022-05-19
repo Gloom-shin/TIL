@@ -37,5 +37,5 @@
 ## 애노테이션 테스트 
 
 ### @Deprecated
-<img src="">
+<img src="./images/deprecated.png">
 - @Deprecated 가 명시된 변수 혹은 메소드를 사용하면, 취소선이 쳐지고, 경고 문구가 나온다.
