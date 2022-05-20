@@ -156,7 +156,7 @@ IntBinaryOperator operato = Math :: max; //메서드 레퍼런스
 
 ### 실제 사용 예제
 
-/[Calculator.java/] 
+[Calculator.java] 
 ```
 public class Calculator {
   public static int staticMethod(int x, int y) { //정적 메소드
@@ -168,7 +168,8 @@ public class Calculator {
   }
 }
 ```
-/[Main함수/] 
+
+[ Main함수 ]
 ```
 public static void main(String[] args) throws Exception {
         IntBinaryOperator operator;
@@ -189,7 +190,8 @@ public static void main(String[] args) throws Exception {
 
 ### 실제 사용 예제
 
-/[Main함수/] 
+
+[ Main함수 ]
 ```
 public class Member {
   private String name;
@@ -222,11 +224,13 @@ public class Member {
 - 만약 `Member`클래스로 생성자를 만들었을 때, 매개변수가 0개 1개 2개 일때 경우마다, `print`를 다르게 구현해놨다. 
 - 그리고 함수형인터페이스인 `Funtion<T, R>`과 `BiFunction<T, U, R>`을 사용하여 함수형인터페이스의 메소드를 바로 구현해 줄 수 있다.
 <img src ="./images/functionClass.png">
+
 > 하나의 인자를 받아들이는 함수로 나타내고, 결과를 생산합니다.
 > 파라미터 t 는 받아 들이는 하나의 함수 인자이다.   
 > 리턴값은 함수의 결과이다.  
 
-/[Main함수/] 
+
+[ Main함수 ]
 ```
 public static void main(String[] args) {
     Function<String, Member> function1 = Member::new;
