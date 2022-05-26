@@ -54,5 +54,5 @@ rootProject.name = '프로젝트이름'
 - 추가적으로 폴더를 구성하고 싶으면
    -  `src`폴더에 `new` -> `Directory`를 누르면, 기본적으로 생성해줄 `main/java, main/resource, test/java, test/resource` 폴더는 생성할 수 있다.
    -   그리고 기존 java파일과 리소스 파일을 정리하여 넣어주면 된다.
-   -  
+   -  만약 java파일이 아닌 폴더(패키지)로 구분해놨었더라면, `Mark Directory as` -> `source Root`로 설정해주면 된다. 
 
