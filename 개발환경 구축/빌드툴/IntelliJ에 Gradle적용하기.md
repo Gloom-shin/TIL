@@ -6,12 +6,12 @@
     - 만약 build System`항목에 `Gradle`이 없다면, 읽을 수 없는 상태이거나, 혹은 설치가 되지 않은 것이다.
 
 
-## Java 프로젝트 
+## Java 프로젝트 😱
  - 일단적으로 IntelliJ 자체적으로 빌드툴을 설정하게 되면, IntelliJ IDEA 엔진에 내장된 자체 빌드툴을 사용한다.
  - 그렇기때문에 `.idea` 폴더의 내용만 있으면 빌드가 된다.
 [JetBrain Blog 공식페이지](https://blog.jetbrains.com/upsource/2015/09/09/mysterious-build-system-setting/)
  
-### Gradle 프로젝트로 변경하기
+### Gradle 프로젝트로 변경하기 ⚠
 > IntelliJ에 의존하여 기존 파일을 삭제하고, 덮어씌우는 작업이기에 권장되는 방법은 아니다. 
 
  - 빌드툴을 내장빌드툴에서 `Gradle`로 바꿔 주려면, 처음 세팅된 값을 제거하고, Gradle 파일로 대체해야 한다.
