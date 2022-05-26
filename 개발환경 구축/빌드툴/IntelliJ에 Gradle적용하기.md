@@ -51,4 +51,8 @@ rootProject.name = '프로젝트이름'
 - 위 두 파일을 작성하여 만들면, IntelliJ가 자동으로 `Load Gradle Project` 알림이 뜬다. 
   - 만약 안 뜨더라도 `import Gradle Project`로 하면된다.
 - 그럼 새로운빌드를 진행하고, `.idea`폴더를 만들고, 외부라이브러리도 받아오면서 세팅이 완료된다.
+- 추가적으로 폴더를 구성하고 싶으면
+   -  `src`폴더에 `new` -> `Directory`를 누르면, 기본적으로 생성해줄 `main/java, main/resource, test/java, test/resource` 폴더는 생성할 수 있다.
+   -   그리고 기존 java파일과 리소스 파일을 정리하여 넣어주면 된다.
+   -  
 
