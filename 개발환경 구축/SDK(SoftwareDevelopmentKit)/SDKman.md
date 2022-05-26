@@ -1,4 +1,4 @@
 # SDKMAN
- - 자바 관련 개발환경을 관리하는 툴이다. 
+ - SDK맨! 대부분의 Unix 기반 시스템에서 여러 소프트웨어 개발 키트 의 병렬 버전을 관리하기 위한 도구입니다
  - 이것을 이용하여 여러 개발 툴을 설치하고, 버전관리 및 업그레이드가 매우 편리하다.
- - java를 비롯한 자바관련 툴(Maven, Ant, sbt, Sparl, Spring Boot)총 28개를 지원한다.
+ - java를 비롯한 여러 툴(Maven, Ant, sbt, Sparl, Spring Boot)총 28개를 지원한다.
