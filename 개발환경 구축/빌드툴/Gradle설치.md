@@ -37,4 +37,6 @@
     -  Complete : 실행파일 + 문서들
  - C드라이브 안에 압축파일을 푼다. 
  - 환경변수 설정한다. 압축푼 폴더의 해당 위치를 환경변수 Path에 추가해준다. 
- - 
+ - 위 작업이 끝나면, cmd창을 열어 잘 설치되었는지 확인한다. `gradle -v`
+ 
+ <img src="./images/gradle_install_check.png">
