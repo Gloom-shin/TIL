@@ -18,3 +18,19 @@ io.netty.channel.ConnectTimeoutException: connection timed out: /172.17.64.1:104
 Exiting.
 Cannot establish network connection from WSL to Windows host (could be blocked by firewall). More details: https://jb.gg/wsl-firewall
 ```
+- 엄청 길어지고 무언가 많은것처럼 느껴지지만, 간단히 요약하자면, 
+- 인텔리제이가 비정상적인 빌드 프로세스로인해 종료됨
+
+### 문제의 원인 
+- 그래서 추천하는 해결방법은, `Cannot establish network connection from WSL to Windows host`
+
+### 해결방법1 
+- WSL에서 윈도우 호스트로의 네트워크 연결을 설정할 수 없으므로, WSL에 권한을 부여해주는 방법이다.
+- 공식 사이트을 참고하였다. [jetbrains WSL 도움말 - 방화벽](https://www.jetbrains.com/help/idea/how-to-use-wsl-development-environment-in-product.html#debugging_system_settings)
+
+1. Windows 터미널을 관리자 권한으로 실행
+2. `New-NetFirewallRule -DisplayName "WSL" -Direction Inbound  -InterfaceAlias "vEthernet (WSL)"  -Action Allow` 명령어 입력
+	- WSL을 사용자권한 연결을 허용한다.
+3.`Get-NetFirewallProfile -Name Public | Get-NetFirewallRule | where DisplayName -ILike "IntelliJ IDEA*" | Disable-NetFirewallRule` 명령어 실행 
+ 	- 방화벽 규칙 갱신해준다.
+
