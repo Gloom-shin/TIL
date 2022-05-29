@@ -30,7 +30,8 @@ Cannot establish network connection from WSL to Windows host (could be blocked b
 
 1. Windows 터미널을 관리자 권한으로 실행
 2. `New-NetFirewallRule -DisplayName "WSL" -Direction Inbound  -InterfaceAlias "vEthernet (WSL)"  -Action Allow` 명령어 입력
-	- WSL을 사용자권한 연결을 허용한다.   
+   - WSL을 사용자권한 연결을 허용한다.   
+
 3.`Get-NetFirewallProfile -Name Public | Get-NetFirewallRule | where DisplayName -ILike "IntelliJ IDEA*" | Disable-NetFirewallRule` 명령어 실행 
- 	- 방화벽 규칙 갱신해준다.
+   - 방화벽 규칙 갱신해준다.
 
