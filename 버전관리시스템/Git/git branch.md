@@ -53,7 +53,21 @@
  <img src="./images/gitBranchDelete.png">
  
  ## 동시에 여러 작업하기
+  - 브랜치를 활용하면, 작업을 나눠서하거나, 다른 방법으로 작업을 해보기 좋다.
+
+<img src="./images/differenceBranch.png">
  
- ## 병합할 때 충돌
- 
- ## rebase
+ ### 병합할 때 충돌
+  - 하지만, 위와 같은 2가지의 경우 병합(Merge)을 할 경우 충돌이 일어나게 된다.
+  - 이럴경우, 둘 중 하나를 합칠수 있게 고쳐주면된다.(수동 병합해야된다는 것)
+  - 하지만, 수동의 경우 시간도 오래걸리고 불편하니 다른 방법이 없나 알아 보자
+
+# Merge 종류
+- 개인 로컬에서의 Merger는 자동병합이 된다.
+- 하지만,  GitHub Pull Request 에서도 Merge를 할 수가 있는데, 총 3가지 종류가 있다. 
+
+## Create a Merge Commit
+
+## Squash and Merge
+
+## Rebase and Merge
