@@ -22,3 +22,11 @@
 > git checkout -b "branchname"
 
  <img src="./images/gitBranchOneTake.png">
+
+
+
+## 추가되는 커밋
+ - 새로운 브랜치를 만들고 전환까지 완료한 상태에서, 커밋(commit)을 하게되면 현재까지 상태에서 해당 브랜치에서만 기록이 된다.
+
+### 예시 
+ <img src="./images/gitNewBranchCommit.png">
