@@ -39,3 +39,21 @@
 > git merge "앞써간 커밋 혹은 브랜치"
 
  <img src="./images/gitBranchMerge.png">
+
+- 이렇게 되면, `oneTake`브랜치가 가리키는 커밋이 `refactGloom`과 같은 위치로 이동하고
+- 현재 가르키는 브랜치은 그대로 `oneTake` 이다.
+- 이런 방식의 병합을  `fast-forward (빨리감기) 병합` 이라 한다.
+
+## 브랜치 삭제하기 
+ - 하지만, `oneTake`브랜치가 필요없다면 삭제할 수 도 있다.
+ - 생성할 때랑 반대로 `-d`로 해주면 된다. 
+ - 만약 삭제하려는 브랜치가 현재 가르키는(선택된) 상태라면 삭제가 불가능 하다. 
+> git branch -d "branchname"
+
+ <img src="./images/gitBranchDelete.png">
+ 
+ ## 동시에 여러 작업하기
+ 
+ ## 병합할 때 충돌
+ 
+ ## rebase
