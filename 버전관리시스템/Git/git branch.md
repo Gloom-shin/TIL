@@ -30,3 +30,12 @@
 
 ### 예시 
  <img src="./images/gitNewBranchCommit.png">
+
+
+## 브랜치 병합하기 
+ - 병합은 merge 명령어로 실행된다. 
+ - 하지만 여기서 헤깔릴 수도 있는 것이, 현재 가리키고 있는 브런치를 덮어씌우는 것이다.
+
+> git merge "앞써간 커밋 혹은 브랜치"
+
+ <img src="./images/gitBranchMerge.png">
