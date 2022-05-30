@@ -67,7 +67,8 @@
 - 하지만,  GitHub Pull Request 에서도 Merge를 할 수가 있는데, 총 3가지 종류가 있다. 
 
 ## Create a Merge Commit
-
+ > 추후 실습해보자
 ## Squash and Merge
-
+ > 추후 실습해보자
 ## Rebase and Merge
+ > 추후 실습해보자
