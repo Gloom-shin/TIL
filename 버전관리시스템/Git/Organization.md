@@ -22,8 +22,8 @@
 - 오히려 Organization Repository는 관리자도 수정사항을 PR로 날려야 하기에, 관리자가 스스로의 수정이 자주 있다면 개인 Repository가 훨씬 편할 것이다.
 - 하지만, 프로젝트의 규모가 커지거나, 혼자서 관리하기 어려워진 상황이 되었을 때는 Organization Repository를 사용한다. 
 
-###  Organization Repository 장점 
- 1. 구성원에게 **원하는 권한**을 줄 수가 있다.
+##  Organization Repository 장점 
+### 1. 구성원에게 **원하는 권한**을 줄 수가 있다.
 
 <p align = center><img src= "https://user-images.githubusercontent.com/104331549/171567089-6ce4cf64-12ff-496c-b2d0-ace6a824d0c8.png" width =60%></p>
 
@@ -33,7 +33,7 @@
  - 구성원에서 프론트엔드개발자는 `Frontend` 레포지토리는 수정할 수 있는 권한을 있으나, `Backend` 레포지토리는 읽을 수만 있게 권한을 부여해 줄 수 있다.
  - 구성원에서 백엔드개발자는 `Backend` 레포지토리는 수정할 수 있는 권한을 있으나, `Frontend` 레포지토리는 읽을 수만 있게 권한을 부여해 줄 수 있다.
 
- 2. 프로젝트 관리가 용이하다. 
+### 2. 프로젝트 관리가 용이하다. 
   - 1번의 장점만으로도, 각자의 접근 권한(Team)이 다르고, 관리자를 여럿으로 둘 수 있기 때문에
   - 혼자서 관리하는 개인 Repository보다 Organization Repository가 훨씬 관리하기 용이핟.
   - `@Mention` 기능을 사용할 수 있어, 접근권한 나눈대로 팀(Teams)대로 멘션이나 문의가 가능하다. 
