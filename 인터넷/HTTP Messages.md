@@ -44,6 +44,7 @@
  - 크게 3가지 요소로 이루어져 있다. (ex. POST / HTTP/ 1.1)
     1. **첫번째**는 서버가 수행하는 동작을 나타낸다.            
         - HTTP 메서드로 `GET`, `POST`, `PUT`, `DELETE` 등이나 방식으로 `HEAD`, `OPTIONS` 올 수 있다. 
+        - 자세한 요청 메서드는 링크 참조 [HTTP 요청 메서드](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
     2. **두번째**는 요청 타켓의 URL, 또는 프로토콜, 포트, 도메인의 절대 경로가 올 수 있다.
         - origin : `POST / HTTP / 1.1` `GET /background.png HTTP/1.0` `HEAD /test.html?query=alibaba HTTP/1.1` `OPTIONS /anypage.html HTTP/1.0`   
         - absolute 형식: 완전한 URL 형식(대부분 GET과 함께 사용됨) `GET http://developer.mozilla.org/en-US/docs/Web/HTTP/Messages HTTP/1.1`
@@ -71,6 +72,7 @@
  - 응답 첫줄 또한 크게 3가지 요소로 이루어져 있다.
    - `요청` 처럼 현재 프로토콜의 버전을 출력하는 건 동일하다. 
    - 상태 코드 - 요청의 결과를 나타낸다.(ex. 200, 302, 404 등)
+       - [HTTP 상태 코드](https://developer.mozilla.org/ko/docs/Web/HTTP/Status) 
    - 상태 텍스트 - 상태 코드에 대한 설명(ex. Not Found)
   
 ### Headers
