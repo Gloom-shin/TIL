@@ -34,3 +34,7 @@
 |port|웹 서버에 접속하기 위한 통로|`:80`  `:3000`|
 |url-path|웹 서버의 루트 디렉토리로부터 웹페이지, 이미지, 동영상 등의 파일이 위치까지의 경로|`/Users/shin/Desktop/`  `/search`|
 |query|웹 서버에 전달하는 추가 질문|`q=JavaScript`|
+
+<br></br>
+### 참조 링크
+https://blog.lael.be/post/61
