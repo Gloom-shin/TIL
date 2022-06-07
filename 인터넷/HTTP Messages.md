@@ -28,6 +28,13 @@
 - 이중 1.start Line 과 HTTP headers를 묶어 요청이나 응답의 `헤드(head)`라고 하고, payload는 `body`라고 한다.
 
 
+### 공통 헤더 
+- `General headers` : 메시지 전체에 적용되는 헤더로, body를 통해 전송되는 데이터와는 관련이 없는 헤더입니다.
+- `Representation headers` : Entity headers로 불렀으며, body에 담긴 리소스의 정보(콘텐츠 길이, MIME 타입 등)를 포함하는 헤더입니다
+
+<img src ="https://user-images.githubusercontent.com/104331549/172322570-7976f612-dd79-4ad6-b0c8-98465f2693dc.png">
+
+
 ## 요청(Requsets)
 <img src ="https://user-images.githubusercontent.com/104331549/172319745-21abcb23-dcd5-4a13-a44d-60e3eac0b2e0.png">
  
@@ -49,12 +56,36 @@
 <img src ="https://user-images.githubusercontent.com/104331549/172322008-96167781-733a-4c84-95de-af90bebe526a.png">
 
 
-### Header
+#### Header
  - Header 파일은 네트워크 파트에서 아무 파일이나 클릭하면, 정보를 볼수 있는데, 첫페이지가 Header이다. 
     - 일반적인 Header의 정보가 나오고, 그 뒤론 각각 요청과 응답의 정보를 볼 수 있다. 
-<img src ="https://user-images.githubusercontent.com/104331549/172322570-7976f612-dd79-4ad6-b0c8-98465f2693dc.png">
+- `Request headers` : fetch를 통해 가져올 리소스나 클라이언트 자체에 대한 자세한 정보를 포함하는 헤더를 의미합니다. User-Agent, Accept-Type, Accept-Language과 같은 헤더는 요청을 보다 구체화합니다.
 
 
+### Body
+- Single-resource bodies(단일-리소스 본문) : 헤더 두 개(Content-Type과 Content-Length)로 정의된 단일 파일로 구성됩니다.
+- Multiple-resource bodies(다중-리소스 본문) : 여러 파트로 구성된 본문에서는 각 파트마다 다른 정보를 지닙니다. 보통 HTML form과 관련이 있습니다
+
+## 응답(Responses)
+### Status line
+ - 응답 첫줄 또한 크게 3가지 요소로 이루어져 있다.
+   - `요청` 처럼 현재 프로토콜의 버전을 출력하는 건 동일하다. 
+   - 상태 코드 - 요청의 결과를 나타낸다.(ex. 200, 302, 404 등)
+   - 상태 텍스트 - 상태 코드에 대한 설명(ex. Not Found)
+  
+### Headers
+ - `Response headers` : 위치 또는 서버 자체에 대한 정보(이름, 버전 등)와 같이 응답에 대한 부가적인 정보를 갖는 헤더로, Vary, Accept-Ranges와 같이 상태 줄에 넣기에는 공간이 부족했던 추가 정보를 제공합니다
+
+
+### Body
+ - 응답 코드가 201, 204와 같은 상태 코드를 가지는 응답에는 본문이 필요하지 않다.
+ - 응답의 body는 크게 두종류로 나눌 수 있다
+    1. Single-resource bodies(단일-리소스 본문) 
+       - 길이가 알려진 단일-리소스 본문은 두 개의 헤더(Content-Type, Content-Length)로 정의
+       - 길이를 모르는 단일 파일로 구성된 단일-리소스 본문은 Transfer-Encoding이 chunked 로 설정되어 있으며, 파일은 chunk로 나뉘어 인코딩
+    2. Multiple-resource bodies(다중-리소스 본문)   
+       - 서로 다른 정보를 담고 있는 body입니다.
+  
 
 ### 참고자료 
 https://developer.mozilla.org/ko/docs/Web/HTTP/Messages
