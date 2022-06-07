@@ -31,6 +31,7 @@
 ### 공통 헤더 
 - `General headers` : 메시지 전체에 적용되는 헤더로, body를 통해 전송되는 데이터와는 관련이 없는 헤더입니다.
 - `Representation headers` : Entity headers로 불렀으며, body에 담긴 리소스의 정보(콘텐츠 길이, MIME 타입 등)를 포함하는 헤더입니다
+   - [MIME 타입](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 
 <img src ="https://user-images.githubusercontent.com/104331549/172322570-7976f612-dd79-4ad6-b0c8-98465f2693dc.png">
 
