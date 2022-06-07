@@ -1,0 +1,47 @@
+# HTTP(HyperText Transfer Protocol)
+- HTML을 비롯하여, 이미지, 동영상, XML문서, JSON 등 다양한 데이터를 문서를 전송하기 위한 Application Layer 프로토콜(일종의 규칙!)이다.
+- 웹브라우저와 웹 서버의 소통을 위해 디자인 되었다.
+
+## HTTP 동작
+ - 본래 멀리 떨어져있는 사람끼리 지식을 공유하기 위해 만든 시스템으로, 서로 주고 받는것이 중요한 기능이였다.
+ - 그리하여 지금까지도, 크게 2가지 동작을 하는데, 그것이 요청과 응답이다.
+
+<img src= "https://user-images.githubusercontent.com/104331549/172310070-6a5f7068-a734-41b8-9ede-d97cfdfd73d0.png">
+
+## HTTP 특징
+- HTTP 메시지는 HTTP서버와 HTTP 클라이언트에 의해 해석됩니다.
+- TCP/IP를 이용하는 응용 프로토콜입니다.
+- HTTP는 연결 상태를 유지라지 않는 비연결성 프로토콜입니다..
+    - (이러한 단점을 해결하기 위해 Cookie와 Session이 등장함)
+- HTTP는 연결을 유지하지않는 프로토콜이기 때문에 요청/응답 방식으로 동작한다.
+
+## HTTP messages 구조
+- 요청과 응답은 유사한 구조를 가진다.
+
+<img src= "https://user-images.githubusercontent.com/104331549/172312622-39bec130-f7cf-4d57-8abf-94b4fd23a7a3.png">
+
+  1. start line : start line에는 요청이나 응답의 상태를 나타냅니다. 항상 첫 번째 줄에 위치합니다. 응답에서는 status line이라고 부릅니다.
+  2. HTTP headers : 요청을 지정하거나, 메시지에 포함된 본문을 설명하는 헤더의 집합입니다.
+  3. empty line : 헤더와 본문을 구분하는 빈 줄이 있습니다.
+  4. body : 요청과 관련된 데이터나 응답과 관련된 데이터 또는 문서를 포함합니다. 요청과 응답의 유형에 따라 선택적으로 사용합니다.
+
+- 이중 1.start Line 과 HTTP headers를 묶어 요청이나 응답의 `헤드(head)`라고 하고, payload는 `body`라고 한다.
+
+
+## 요청(Requsets)
+### startLine
+ - 서버가 특정 동작을 취하게끔 만들기 위해 클라이언트에서 서버로 보내는 메시지이다. 
+ - 크게 3가지 요소로 이루어져 있다. (ex. POST / HTTP/ 1.1)
+    1. **첫번째**는 서버가 수행하는 동작을 나타낸다.            
+        - HTTP 메서드로 `GET`, `POST`, `PUT`, `DELETE` 등이나 방식으로 `HEAD`, `OPTIONS` 올 수 있다. 
+    2. **두번째**는 요청 타켓의 URL, 또는 프로토콜, 포트, 도메인의 절대 경로가 올 수 있다.
+        - origin : `POST / HTTP 1.1` `GET /background.png HTTP/1.0` `HEAD /test.html?query=alibaba HTTP/1.1` `OPTIONS /anypage.html HTTP/1.0`   
+        - absolute 형식: 완전한 URL 형식(대부분 GET과 함께 사용됨) `GET http://developer.mozilla.org/en-US/docs/Web/HTTP/Messages HTTP/1.1`
+        - authority 형식 : 도메인 이름과 포트가 있는 URL이 사용된다. HTTP 터널을 구축하는 경우에만 CONNECT와 함께 사용할 수 있다 `CONNECT developer.mozilla.org:80 HTTP/1.1`
+        - asterisk 형식 : OPTIONS와 함께 별표('*') 하나로 간단하게 서버 전체를 나타냅니다. `OPTIONS * HTTP/1.1
+`
+    3. 마지막 **세번째**는 `HTTP 버전`이 들어간다. (2022년기준 최신버전은 HTTP1.3이다.)
+
+
+### 참고자료 
+https://developer.mozilla.org/ko/docs/Web/HTTP/Messages
