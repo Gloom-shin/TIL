@@ -29,18 +29,31 @@
 
 
 ## 요청(Requsets)
+<img src ="https://user-images.githubusercontent.com/104331549/172319745-21abcb23-dcd5-4a13-a44d-60e3eac0b2e0.png">
+ 
 ### startLine
+
  - 서버가 특정 동작을 취하게끔 만들기 위해 클라이언트에서 서버로 보내는 메시지이다. 
  - 크게 3가지 요소로 이루어져 있다. (ex. POST / HTTP/ 1.1)
     1. **첫번째**는 서버가 수행하는 동작을 나타낸다.            
         - HTTP 메서드로 `GET`, `POST`, `PUT`, `DELETE` 등이나 방식으로 `HEAD`, `OPTIONS` 올 수 있다. 
     2. **두번째**는 요청 타켓의 URL, 또는 프로토콜, 포트, 도메인의 절대 경로가 올 수 있다.
-        - origin : `POST / HTTP 1.1` `GET /background.png HTTP/1.0` `HEAD /test.html?query=alibaba HTTP/1.1` `OPTIONS /anypage.html HTTP/1.0`   
+        - origin : `POST / HTTP / 1.1` `GET /background.png HTTP/1.0` `HEAD /test.html?query=alibaba HTTP/1.1` `OPTIONS /anypage.html HTTP/1.0`   
         - absolute 형식: 완전한 URL 형식(대부분 GET과 함께 사용됨) `GET http://developer.mozilla.org/en-US/docs/Web/HTTP/Messages HTTP/1.1`
         - authority 형식 : 도메인 이름과 포트가 있는 URL이 사용된다. HTTP 터널을 구축하는 경우에만 CONNECT와 함께 사용할 수 있다 `CONNECT developer.mozilla.org:80 HTTP/1.1`
-        - asterisk 형식 : OPTIONS와 함께 별표('*') 하나로 간단하게 서버 전체를 나타냅니다. `OPTIONS * HTTP/1.1
-`
-    3. 마지막 **세번째**는 `HTTP 버전`이 들어간다. (2022년기준 최신버전은 HTTP1.3이다.)
+        - asterisk 형식 : OPTIONS와 함께 별표('*') 하나로 간단하게 서버 전체를 나타냅니다. `OPTIONS * HTTP/1.1`
+    3. 마지막 **세번째**는 `HTTP 버전`이 들어간다. (2022년기준 최신버전은 HTTP/1.3이다.)
+ - 하지만, 요즘 HTTP개발모드를 보면, UI가 바뀌어서 위의 3가지 요소를 선택적으로 볼 수 있다.
+ - HTTP 버전은 2.0이 많이 쓰인다. 
+
+<img src ="https://user-images.githubusercontent.com/104331549/172322008-96167781-733a-4c84-95de-af90bebe526a.png">
+
+
+### Header
+ - Header 파일은 네트워크 파트에서 아무 파일이나 클릭하면, 정보를 볼수 있는데, 첫페이지가 Header이다. 
+    - 일반적인 Header의 정보가 나오고, 그 뒤론 각각 요청과 응답의 정보를 볼 수 있다. 
+<img src ="https://user-images.githubusercontent.com/104331549/172322570-7976f612-dd79-4ad6-b0c8-98465f2693dc.png">
+
 
 
 ### 참고자료 
