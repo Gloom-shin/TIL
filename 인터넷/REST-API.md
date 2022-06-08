@@ -68,13 +68,49 @@
 
 ## RESTful한 설계 
 > 그럼 대표적인 상태 변경 방법이 뭐가 있을까? 
- - 중심 규칙으로 크게 2가지가 있다. 
+ - 중심 규칙으로 크게 5가지가 있다. 
     1. URI로 자원(Resource)을 표현해야한다.  
     2. 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현된다.
+    3. HTTP 헤더(메시지 본문에서 보낸 객체에 대한 필수 정보를 제공)
+    4. query 파라미터(페이징, 필터링, 정렬, 수색등)
+    5. 상태 코드(200, 204, 400, 404등)
 
 
+## RESTful의 특징
+> RESTful한 설계를, REST한 아키텍처를 쓰는 이유는 무엇일까?? 이것은 6가지 특징으로 설명할 수 있을 것 같다.
+ 1. 인터페이스 일관성(Uniform Interface)
+    - URI로 지정한 리소스에 대한 용청을 통일되고, 한정적으로 수행하는 아키텍처 스타일
+    - HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용가능하며, 의존성이 낮은 느슨한 형태를 갖는다.
+    
+ 2. 무상태(Stateless)
+    - Client context를 서버에 저장하지 않는다. 
+        - 세션과 쿠기와 같은 내용을 신경쓰지 않아도 된다. 
+    - Server는 각각의 요청을 완전히 별개의 것으로 인식하고 처리한다.
+        - 이전 요청이 다음 요청의 처리에 연관되어서는 안됨
+ 
+ 3. 캐시 처리 기능(Cacheable)
+    - 웹에서 사용하는 기존 인프라를 그대로 활용할 수 있다. 
+        -  HTTP가 가진 가장 강력한 특징중 하나인 캐싱 기능을 적용할 수 있다.
+        -  
+    - 대량의 요청을 효율적으로 처리할 수 있다.
+ 4. 계층구조(Layered System)
+    - Client는 REST API Server만 호출 한다.
+    - REST Server는 다중 계층으로 구성될 수 있습니다.
+       - 보안, 로드 밸런싱, 암호화 등을 위한 계층을 추가하여 구조를 변경할 수 있습니다.
+       - Proxy, Gateway와 같은 네트워크 기반의 중간매체를 사용할 수 있습니다.
+       - 하지만 Client는 Server와 직접 통신하는지, 중간 서버와 통신하는지는 알 수 없습니다.
+
+ 5. 자체표현(Code on demand or self Descriptiveness)
+    - 요청 메시지만 받고도 바로 코드에 적용하여 실행할 수 있는 것을 말한다.(단, 가독성이 떨어질 수 있다.)
+    - 그래서, 가독성을 높혀 요청 메시지만 보고도 쉽게 이해할 수 있는 코드를 선택하여 작성할 수도 있다.
+ 6. 서버-클라이언트 구조(Server-Client) 
+
+## 결론 
+ - REST는 새로운 것이 아니다. 
+ - 보다 쉽고 간단히 처리하기 위해 초기 인터넷표준, URI 및 HTTP에 대한 강조를 통해 이전의 방식으로 복귀한 것이다. 
 
 ### 참고 링크 
 - [API 위키 백과](https://ko.wikipedia.org/wiki/API)   
 - [aws API란?](https://aws.amazon.com/ko/what-is/api/)
 - [티스토리 블로그 API,HTTP API, REST API](https://bentist.tistory.com/37)
+- [REST 위키 백과](https://ko.wikipedia.org/wiki/REST)
