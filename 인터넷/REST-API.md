@@ -77,3 +77,4 @@
 ### 참고 링크 
 - [API 위키 백과](https://ko.wikipedia.org/wiki/API)   
 - [aws API란?](https://aws.amazon.com/ko/what-is/api/)
+- [티스토리 블로그 API,HTTP API, REST API](https://bentist.tistory.com/37)
