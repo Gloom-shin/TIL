@@ -124,10 +124,20 @@
 
 <img><p align="center"><img src="https://user-images.githubusercontent.com/104331549/173533630-c4ab2056-155f-4aba-91c9-389757b11e9a.png"></p>
 
+<br></br> 
 > 다 이해는 가는데, 그럼 굳이 웹서버랑 WAS가 송수신을 할때, Servlet이나 JSP를 쓰는 이유가 뭐야??
+<br></br> 
 
-
-
+## 웹 컨테이너
+ > 웹서버는 CGI라는 개념을 지원한다.
+### CGI란? 
+ - Common Gateway Interface(공용 게이트웨이 인터페이스)
+ - 웹 서버 상에서 프로그램을 동작시키기위한 방법을 정의한 프로그램
+ - 즉, 웹서버와 외부 프로그램 사이에서 정보를 주고 받는 방법이나 규약을 말한다. 
+ - PHP, Python등의 언어는 Apache를 통해 CGI를 적용시킬 수 있지만, Java언어는 따로 CGI 적용이 안된다.
+ - 그래서 따로 CGI의 역할을 하는 **컨테이너**라는 것이 필요하다
+ - 그 컨테이너 안에는 자바코드를 담는 파일인데, HTML문서도 담을 수 있는 Servlet이라는 파일로 구성되어 있는 것이다. 
+ 
 <br></br>  
 
 ### 참조 링크
