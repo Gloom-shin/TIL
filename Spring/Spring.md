@@ -11,6 +11,7 @@
     - Spring을 사용한 웹 요청을 처리할때에도 내부적으로는 Servlet을 사용한다
     - Servlet을 이용한다라는 의미
       - Servlet을 위한 Java 코드가 클라이언트 측 코드에서 분리되어 별도의 Java 클래스로 관리된다는 것을 의미
+      - 자세한 내용은 [링크 참조](https://github.com/Gloom-shin/TIL/blob/714eb30635aa196429bebe28e65f62727c138261/Spring/WAS%EC%99%80%20WebServer(%EC%9B%B9%EC%9D%98%20%EC%97%AD%EC%82%AC).md)
 ## 용어 검색🏷
 ### Enterprise Java 
   - 기업용 자바플랫폼이라는 뜻으로, 보통 `JEE`라고 표현한다. 
