@@ -124,8 +124,11 @@
 
 <img><p align="center"><img src="https://user-images.githubusercontent.com/104331549/173533630-c4ab2056-155f-4aba-91c9-389757b11e9a.png"></p>
 
+> 다 이해는 가는데, 그럼 굳이 웹서버랑 WAS가 송수신을 할때, Servlet이나 JSP를 쓰는 이유가 뭐야??
 
 
+
+<br></br>  
 
 ### 참조 링크
 [위키백과 java Servlet](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EC%84%9C%EB%B8%94%EB%A6%BF)
