@@ -57,6 +57,8 @@
 <img src= "https://user-images.githubusercontent.com/104331549/173769128-72d41aa8-0c20-4511-b446-0335e57f1fa1.png">
 
 ### API 계층(API Layer)
+ - API 계층은 클라이언트의 요청을 받아들이는 계층입니다
 ### 서비스 계층(Service Layer)
+ - 서비스 계층은 API 계층에서 전달 받은 요청을 업무 도메인의 요구 사항에 맞게 비즈니스적으로 처리하는 계층
 ### 데이터 액세스 계층(Data Access Layer)
-
+ - 데이터 액세스 계층은 비즈니스 계층에서 처리된 데이터를 데이터베이스 등의 데이터 저장소에 저장하기 위한 계층
