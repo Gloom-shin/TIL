@@ -141,7 +141,17 @@ import java.net.URI;
 <img src="https://user-images.githubusercontent.com/104331549/175561577-b467d4c7-4392-49d6-836e-10b7a91877f5.png">
 
 
-### 5. 정리 
+## 또 다른 요청 전송 방법 
+ - `getForEntity()`
+ - `exchange()`
+
+---
+관련내용 추후 추가예정
+---
+
+
+
+### 정리 
  - RestTemplate을 사용할 수 있는 기능 예
    - 결제 서비스
    - 카카오톡 등의 메시징 서비스
