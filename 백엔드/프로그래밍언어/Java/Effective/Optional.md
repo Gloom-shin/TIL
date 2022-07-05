@@ -50,3 +50,16 @@ try {
 
 ## 사용사례
 ### CrudRepository 연결 후 반환 값
+> 데이터베이스에서 원하는 값을 조회를 하다보면, 모든 정보가 존재하지 않을 수 도 있다.   
+> 즉, null값이 반환되는 일도 있을텐데, 저장되어 있는 타입이 `int`나 `String`이어서 null 값을 가질 수 없을 것이다.
+
+ - interface `CrudRepository<T, ID>` 를 상속받으면, 안에 있는 메소드를 사용할 수 있는데, 그 메소드들이 Qeury문으로 데이터 베이스에서 원하는 값을 조회해올 수 있다. 
+   - findById(ID id) : Optional<T> 반환
+   - existsById(ID id) : boolean 반환
+   - findAll() : Iterable<T>반환
+   - findAllById(ID id) : Iterable<T>반환
+   - delete 같은 경우는, 반환값이 없다.
+
+>  여기서, `existsById`와 `delete`를 제외하고 조회된 값을 반환하는 메소드이다. 
+ - iterator<T> 의 경우 참조객체임으로 null 처리가 가능하다.
+ - Optional<T> 의 경우도 Optional에 의해 참조객체가 되어 null 처리가 가능해졌다. 
