@@ -9,7 +9,7 @@
    - 그중  Hibernate ORM을 다룬다. 
    - Hibernate는 JPA에서 지원하는 기능외에도 자체적으로 사용할 수 있는 API도 지원한다.
 
-> PA는 Java Persistence API의 약자이지만 현재는 Jakarta Persistence라고도 불린다.
+> PA는 Java Persistence API의 약자이지만 현재는 [Jakarta Persistence](#jakartaPersistence)라고도 불린다.
 
 <br></br>
 
@@ -323,7 +323,8 @@ public CommandLineRunner testJpaBasicRunner(EntityManagerFactory emFactory) {
 > JPA 내부적으로 em.flush() 메서드가 호출되어 영속성 컨텍스트의 변경 내용을 데이터베이스에 반영한다.
 
 
-<p align="center"><img src="" width="60%"></p>
+
+
 
 
 # 참고학습 
@@ -346,3 +347,30 @@ public CommandLineRunner testJpaBasicRunner(EntityManagerFactory emFactory) {
  - 테스트 서버는 update 또는 validate
  - 스테이징과 운영 서버는 validate 또는 none
  - DDL(Data Defination Language)_데이터 정의어  = 데이터베이스의 생성,변경,삭제를 자동으로 생성해주는 것.
+
+
+## Jakarta Persistence<a name="jakartaPersistence"></a>
+> JPA(Java Persistence API)의 약자이지만 현재는 `Jakarta Persistence`라고도 불리는 이유를 알아보자
+
+- [스택오버플로우 참고링크](https://stackoverflow.com/questions/60021815/why-has-javax-persistence-api-been-replaced-by-jakarta-persistence-api-in-spring)
+ 
+- 이유를 보면, 
+  - Java EE(기업용)가 Oracle에 의해 오픈 소스로 제공되고
+  - Eclipse Foundation(이클립스 재단)에 권한이 부여된 후,
+  - `Oracle`이 Java 브랜드에 대한 권한을 갖고 있기 때문에 Java에서 이름을 변경해야 하는 법적 의무
+  - 자카르타라는 이름은 커뮤니티에서 선택
+
+<p align="center"><img src ="https://user-images.githubusercontent.com/104331549/177279726-12292514-6132-4e97-ad4c-780da5b0f0dc.png"></p>
+
+
+- [위키백과 참고링크](https://en.wikipedia.org/wiki/Jakarta_Persistence)
+
+<p align="center"><img src="https://user-images.githubusercontent.com/104331549/177277791-066380c4-99e6-4a80-94fc-20169eb3da32.png" width="60%"></p>
+
+- 2022년 7월 기준
+<p align="center"><img src="https://user-images.githubusercontent.com/104331549/177276997-b7c6cfcc-5563-4489-9d79-06f2a3777115.png" width="60%"></p>
+- JPA는 이미 Jakarta 패키지에 포함되어 있다.
+
+
+## JPA 생명주기 
+- 별도로 다룰 예정 [참고링크만 참조](https://thorben-janssen.com/entity-lifecycle-model/)
