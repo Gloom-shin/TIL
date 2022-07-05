@@ -83,7 +83,7 @@ spring:
  - (1)과 같이 설정을 추가해 주면 애플리케이션 실행시, 이 엔티티와 매핑되는 테이블을 데이터베이스에 자동으로 생성해준다.
    - JDBC에서는 schema.sql파일을 이용해 테이블 생성을 위한 스키마를 직접 지정해 주었지만, 
    - JPA를 사용하고 (1)처럼 설정을 추가해주면 자동으로 DB 테이블을 생성해준다. 
-
+ - `jpa.hibernate.ddl-auto: create` 관련하여 추가 사항은 [여기 Click](#ddlAuto)
 <br></br>
 
 ## 영속성 컨텍스트에 엔티티 저장 
@@ -326,3 +326,23 @@ public CommandLineRunner testJpaBasicRunner(EntityManagerFactory emFactory) {
 <p align="center"><img src="" width="60%"></p>
 
 
+# 참고학습 
+
+## ddl-auto <a name="ddlAuto"></a>
+- [스프링 공식 문서링크](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto.data-initialization.using-hibernate)
+- 결론부터 말하자면, `spring.jpa.hibernate.ddl-auto: create` 옵션은 로컬환경(인메모리 DB)에서만 사용해야 된다.
+- 왜냐하면, `Create` 옵션은 해당하는 기존 테이블이 있으면 `DROP`하고 새로운 걸 만들기 때문이다.
+   - 만약 운영DB라면, 기존DB가 사라지는 격이다. :scream:
+### ddl-auto 옵션 종류
+- `create`: 기존테이블 삭제 후 다시 생성 (DROP + CREATE)
+- `create-drop`: create와 같으나 종료시점에 테이블 DROP
+- `update`: 변경분만 반영(이것 역시 `운영DB`에서는 사용하면 안됨)
+- `validate` : 엔티티와 테이블이 정상 매핑되었는지만 확인
+- `none`: 사용하지 않음(사실상 없는 값이지만 관례상 none이라고 한다.)
+
+### 정리 
+ - 운영 장비에서는 절대 `create`, `create-drop`, `update` 사용하면 안된다.
+ - 개발 초기 단계는 create 또는 update
+ - 테스트 서버는 update 또는 validate
+ - 스테이징과 운영 서버는 validate 또는 none
+ - DDL(Data Defination Language)_데이터 정의어  = 데이터베이스의 생성,변경,삭제를 자동으로 생성해주는 것.
