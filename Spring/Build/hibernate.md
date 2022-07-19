@@ -84,6 +84,9 @@ spring:
         format_sql: true  
 ```
  - 만약 Oracle로 바꾸는 상황이었다면 `OracleDiect`를, H2로 바꾸는 상황이었다면 `H2Dialect`의 platform를 찾아 넣어주면된다.
+ - 또한, 버전에 맞는 `MySQL5InnoDBDialect` dialect로 설정해줘야한다.
  - 보다, 많은 상황은 아래 링크를 참조하자.
+
 ## 참고자료
 [Hibernate 교육 해외사이트](https://www.educba.com/hibernate-dialect/)
+[버전에 맞는 설정](https://firework-ham.tistory.com/106)
