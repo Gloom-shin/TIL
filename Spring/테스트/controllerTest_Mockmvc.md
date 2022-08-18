@@ -131,7 +131,7 @@ mockMvc.perform(get("/members") // URL과 HTTP Method 구현
 |isInternalServerError()|응답 상태 코드가 예외발생(500)인지 확인|
 |is(int status)|몇 번 응답 상태 코드가 설정되었는지 확인 <br/>ex) is(200), is(404)|
 
-> 추후 뷰템플릿을 사용하게되면 알아보자
+> 추후 뷰템플릿을 사용하게되면 뷰템플릿 테스트에 대해서도 알아보자
 ### 뷰/리다이렉트 검증
  - view()
 ### 모델 정보 검증
