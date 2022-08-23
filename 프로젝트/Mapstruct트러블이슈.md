@@ -3,7 +3,7 @@
 # 트러블 이슈
 > Mapstruct가 DTO 객체에서 Entity 객체로 매핑을 못해준다
 > 여기서 더 문제는 항상 인식을 못하는 것이 아니라, 10번에 1번꼴로 제대로 인식이 된다는 것이다.
-
+---
 ## 현재 상황
 <img src="https://user-images.githubusercontent.com/104331549/185874398-f990105a-8e3e-41f6-b6aa-ff49b678e7b9.png">
  
@@ -109,7 +109,7 @@ public interface ReviewBoardMapper {
 
 <br></br>
 <br></br>
-
+---
 ## 시도해본 방법
 ### 직접 매핑해주기
  - `@Mapping()`을 활용하여, source와 target을 정하면, DTO의 속성값과 Entity의 속성값을 연결 시켜줄 수가 있다. 
@@ -196,10 +196,10 @@ public class ReviewBoardDto {
 <p align="center"><img src="https://user-images.githubusercontent.com/104331549/185878083-ae2dd2fe-3642-4f13-8ed9-12e7d5a3d06f.png" width="65%"></p>
 
 
-
 ### 버전다운과 변수명 변경 결과 
 > 하지만 결과는 똑같았다. 
 
+<br></br>
 <br></br>
 
 ### Gradle dependencies 순서 바꾸기
@@ -235,13 +235,8 @@ public class ReviewBoardDto {
   - 그러므로 `annotation processor lombok-mapstruct-binding`를 추가해야 합니다.
 
 ```java
-        dependencies{
-        annotationProcessor"org.projectlombok:lombok-mapstruct-binding:0.2.0" // 추가
-        }
+dependencies{
+    annotationProcessor"org.projectlombok:lombok-mapstruct-binding:0.2.0" // 추가
+}
 ```
 
-
-
-
-
-<p align="center"><img src="" width="65%"></p>
