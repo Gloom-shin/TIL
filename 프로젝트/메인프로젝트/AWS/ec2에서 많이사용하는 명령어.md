@@ -55,19 +55,109 @@
 
 
 ## bash shell 명령어
+ - man : command, system call, function 등 다양한 리눅스 명령어의 사용법을 확인
+ - passwd : 로그인한 사용자 ID의 암호변경
+ - pwd : 현재 디렉토리 위치
+ - cd : 디렉토리 이동
+ - mkdir : 디렉토리 생성 
+ - ls : 현재 위치한 디렉토리에 있는 폴더와 파일 확인
+ - cat : v파일 보기 
+ - rm : 파일 및 폴더 삭제
+   - `-r` 옵션 : 하위 디렉토리를 포함한 모든 파일 삭제
+   - `-f` 옵션 : 강제로 파일이나 디렉토리 삭제
+ - mv : 파일의 이름을 변경하거나 디렉토리 경로 변경
+ - clear : 콘솔에 있는 명령어를 모두 지운다.
+ - history : 이전에 사용된 명령어 이력 확인
+ - find : 폴더 또는 파일 검색 
+   -  `-name "파일명"`입력 시 현재 폴더에서 파일명을 가진 파일 또는 폴더를 검색한다. 
+ - grep : 파일 또는 텍스트에서 특정 키워드가 포함된 줄 출력
+   - `grep [옵션] [패턴] [파일명]` 형식으로 사용한다.  
+   - `-i` 옵션 :  Insensitively하게(대소문자 구분 없이) 찾는다.
+   - `-w` 옵션 : 정확히 그 단어만 찾기
+   - `-v` 옵션 : 특정 패턴 제외한 결과 출력
+   - `-E` 옵션 : 정규 표현식 사용
+
+ - ps : 현재 실행중인 Process 확인
+   - `pipe`랑 같이 쓰인다.
+ - export : 환경변수 설정
+ - chmod : 파일 권한을 변경
+   - 읽기권한 4, 쓰기 권한 2,실행권한 1 => 모든권한 7로 적용할 수 있다.
+ - nohup : 터미널 종료 후에도 계속 작업이 유지되도록 백그라운드로 process를 실행
+ - curl : 웹 서버에 요청을 보냄(주로 웹으로부터 파일을 다운로드받을 때 사용)
+ 
+## Pipe와 리다이렉션
+ > 리눅스 쉘 명령어를 보다보면,  `<`, `>` , `|` 과 같은 기호를 접하게 된다. 
+ > 이 기호들은 단순히 하나의 명령어만 실행할 수 있는 CLI에 복잡한 작업을 할 수 있게 도와준다.
+### standard stream
+ - pipe와 리다이렉션에 들어가기 앞써, command로 실행되는 process는 3가지 스트림을 가지고 있다. 
+   - 표준 입력 스트림(standard input stream)
+   - 표준 출력 스트림(standard output stream)
+   - 오류 출력 스트림(standard error stream)
+ - 이 모든 스트림은 일반적인 plain text로 console 에 출력된다. 
+ - 리다이렉션은 이런 스트림의 흐름을 바꿔주는 기능을 한다.
+ - 파이프는 두 프로세스 사이에서 한 프로세스의 출력 스트림이 또 다른 프로세스의 입력 스트림으로 사용될 때 쓰인다.
+### Redirection: > (write to file)
+- `>`를 사용하면 stdout의 내용을 파일에 적을 수 있다.
+- ex) `ls > files.txt`
+  - ls로 출력되는 표준 출력 스트림의 방향을 files.txt로 바꿔줌으로써, 현재 위치의 파일리스트가 아닌 files.txt에서 ls로 출력되는 결과가 나온다.
+### Redirection: < (read from file)
+- `<`를 사용하면 file의 내용을 읽어올 수 있다.
+- ex) `head < files.txt`
+  - files.txt의 파일 내용이 head라는 파일의 처음부터 10라인 까지 출력해주는 명령으로 된다.
 
 
+### Redirection: | (Pipelining)
+ - `|`를 사용하여 command 를 연결할 수 있다. 
+ - 즉, 다중 명령어작업을 실행 할 수 있다. 
+ - ex)` ls | grep files.txt`
+   - ls 명령을 통한 출력 내용이 grep 명령의 입력 스트림으로 들어 간다.
 
+# 실제 사용하게되는 명령어 
+## JDK 세팅 
+### 매니저 체크
+- `sudo apt update`
+### JDK 설치
+- `sudo apt install openjdk-11-jre-headless`
+### 버전 확인 
+ - `java --version`
 
+## git 
+### git clone
+ - `git clone [복사할 깃허브 경로]`
+### 프로젝트 빌드
+ - `./gradlew build`
+## MySQL 세팅
+### mysql 설치
+ - `sudo apt install mysql-server`
+### mysql 설치 확인
+ - `dpkg -l | grep mysql-server`
+ - mysql 직접 실행 :`sudo mysql -u root -p` 
+### database 만들기
+ - `CREATE DATABASE {DB이름};`
+
+### mysql 사용자 만들기 
+ - 사용자 생성 :`create user '[사용자명]'@'[접근가능한 곳]' identified by '[비밀번호]';` 
+   - ex) `CREATE USER 'testUser'@'localhost' IDENTIFIED BY '1234';`
+   - `localhost`에서 접속 가능한 testUser 라는 사용자 명을 만들었으며, 비밀번호는 1234 이다.
+ - 권한 부여 : `grant all privileges on [데이터베이스명].[테이블명] to [사용자명]@'[접근가능한 곳]';`  
+   - ex) `mysql> GRANT ALL PRIVILEGES ON testDB.* TO 'testUser'@'localhost';`
+   - testUser는 testDB에 모든 테이블에 대해 모든 권한이 생긴다.
+ - 권한 적용 : `FLUSH PRIVILEGES;`
+
+## 배포
 ### 백그라운드에서 실행 
- - nohup java -jav [실행파일]
+ - `nohup java -jav [실행파일]`
 ### 백그라운드에서 log 없이 실행 
- - nohup java -jav [실행파일] 1> /dev/null 2>&1 &
-
+ - `nohup java -jav [실행파일] 1> /dev/null 2>&1 &`
 ### 실행중인 PID 확인하기 
  - 리눅스 명령어
- - sudo lsof -t -i:8080 
+ - `sudo lsof -t -i:8080 `
    - 8080 포트로 실행하고 있는 프로세스 아이디를 찾음
- - sudo kill -9 [프로세스ID]
+ - `sudo kill -9 [프로세스ID]`
    - 해당 PID 강제종료
 
+
+## 참고자료
+ - [리눅스 쉘 기본명령어 이해 및 실습](https://www.fun-coding.org/linux_basic2.html)
+ - [유용한 쉘 명령어 (Shell commands) 모음](https://bioinfoblog.tistory.com/11)
+ - [MySQL Database 생성 및 권한부여](https://devdhjo.github.io/mysql/2020/01/29/database-mysql-002.html)
