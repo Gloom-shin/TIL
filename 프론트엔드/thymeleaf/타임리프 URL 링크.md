@@ -11,7 +11,7 @@
  - 파라미터로 사용할 변수 2개를 `model`에 `addAttribute`해준다.
 ```java
 public class BasicController {
-    @GetMapping("link")
+    @GetMapping("/link")
     public String link(Model model) {
         model.addAttribute("param1", "data1");
         model.addAttribute("param2", "data2");
