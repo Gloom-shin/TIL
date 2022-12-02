@@ -28,7 +28,7 @@
 
 ### 결과 
 
-<img src="https://user-images.githubusercontent.com/104331549/205268746-26e05083-8bab-464b-8711-c5da78a1fcf3.gif">
+<img src="https://user-images.githubusercontent.com/104331549/205268746-26e05083-8bab-464b-8711-c5da78a1fcf3.gif" width=" 50%">
 
  - 버튼을 눌러도 아무런 버튼 색만 변하지, 드롭박스가 생성되지않았다. 
 
@@ -52,4 +52,4 @@
    - `<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>`
 
 ## 문제해결 결과
-<img src="https://user-images.githubusercontent.com/104331549/205272747-ec17c488-b287-41cf-8b57-8058b2564bf6.gif">
+<img src="https://user-images.githubusercontent.com/104331549/205272747-ec17c488-b287-41cf-8b57-8058b2564bf6.gif" width=" 50%">
